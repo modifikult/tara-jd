@@ -1,0 +1,80 @@
+@import "../common/vars";
+
+.cooperation {
+  margin-bottom: 150px;
+
+  .cooperation__wrapper {
+    h2 {
+      &:after {
+        content: '';
+        display: block;
+        width: 84px;
+        border-bottom: 2px solid rgba(21, 152, 249, 1);
+        margin-top: 20px;
+      }
+    }
+
+    ul {
+      margin-top: 80px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        display: flex;
+        height: 112px;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 220px;
+
+        span {
+          display: block;
+          color: $primary;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cooperation {
+    .cooperation__wrapper {
+      ul {
+        flex-wrap: wrap;
+
+        li {
+          width: 40%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cooperation {
+    margin-bottom: 60px;
+
+    .cooperation__wrapper {
+      ul {
+        flex-wrap: wrap;
+
+        li {
+          justify-content: start;
+          width: 50%;
+
+          svg {
+            margin: 0 auto 8px auto;
+          }
+
+          span {
+            font-size: 12px;
+            line-height: 1.4;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

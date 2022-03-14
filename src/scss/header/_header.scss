@@ -1,0 +1,151 @@
+@import "../common/vars";
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  transition: all .4s ease;
+  z-index: 20;
+
+  .header__wrapper {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+
+    .logo {
+      margin-right: auto;
+      width: 248px;
+      height: 33px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .nav__content {
+      display: flex;
+
+      .email {
+        margin-right: 53px;
+
+        a {
+          text-decoration: none;
+          font-weight: 300;
+          line-height: 19px;
+          color: #fff;
+        }
+      }
+
+      .social-networks {
+        a {
+          text-decoration: none;
+
+          &:not(:last-child) {
+            margin-right: 25px;
+          }
+        }
+      }
+    }
+
+    .burger-menu {
+      display: none;
+      height: 100%;
+      align-items: center;
+
+      span {
+        display: block;
+        width: 30px;
+        border-bottom: 3px solid #fff;
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: -9px;
+          width: 23px;
+          border-bottom: 3px solid #fff;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 9px;
+          width: 30px;
+          border-bottom: 3px solid #fff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .header {
+    .header__wrapper {
+      height: 62px;
+
+      .logo {
+        margin-right: auto;
+        width: 182px;
+        height: 33px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .nav__content {
+        visibility: hidden;
+        position: absolute;
+        top: -100%;
+        left: -100%;
+
+
+        .email {
+          transform: translateX(-100%);
+          opacity: 0;
+          transition: all 0s ease;
+        }
+
+        .social-networks {
+          transform: translateX(-100%);
+          opacity: 0;
+          transition: all 0s ease;
+        }
+      }
+
+      .nav__content.active {
+        visibility: visible;
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        padding: 25px;
+        background: rgba(0, 0, 0, .9);
+
+        .email {
+          transform: translateX(0);
+          opacity: 1;
+          transition: all .5s ease;
+          margin-bottom: 20px;
+        }
+
+        .social-networks {
+          transform: translateX(0);
+          opacity: 1;
+          transition: all .5s ease;
+        }
+      }
+
+      .burger-menu {
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import "vars";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: 500;
+  color: $secondary;
+}
+
+a {
+  transition: all .4s ease;
+
+  &:hover {
+    background: linear-gradient(rgba(21, 152, 249, 1), rgba(0, 125, 216, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #F3F3F3;
+  width: 57.84%;
+  z-index: -1;
+}
+
+.container {
+  padding: 0 20px;
+  max-width: 1256px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+
+@media screen and (max-width: 991px) {
+  .section-bg {
+    width: 100%;
+  }
+}
